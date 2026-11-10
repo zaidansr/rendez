@@ -2,13 +2,17 @@
   "name": "rendez-desktop-prototype",
   "version": "0.1.0",
   "private": true,
-  "description": "Rendez local desktop UI prototype",
+  "description": "Rendez collaborative workspace desktop app",
   "main": "main.cjs",
   "scripts": {
-    "start": "electron ."
+    "start": "electron .",
+    "server": "node server.cjs",
+    "test": "node --test tests/integration.test.cjs",
+    "test:e2e": "node --test tests/electron.e2e.cjs"
   },
   "devDependencies": {
-    "electron": "^45.2.3"
+    "electron": "^45.2.3",
+    "playwright": "1.65.0"
   }
 }
 
