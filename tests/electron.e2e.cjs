@@ -101,6 +101,8 @@ test('two independent Electron profiles complete shared UI workflow', { timeout:
     await page.locator('#credential-form [name="apiKey"]').fill(`test-${name}-${token}`);
     await page.locator('#credential-form button[type="submit"],#credential-form button:not([type])').first().click();
     await page.getByText('Key configured',{exact:true}).waitFor();
+    await page.locator('#connection-result').getByText('API key saved for your account.').waitFor();
+    await page.locator('[data-action="go-agent-step"]').getByText('Continue to register an agent').waitFor();
     assert.equal(await page.locator('#credential-form [name="apiKey"]').inputValue(),'');
     await page.locator('#agent-form [name="name"]').fill(`${name} agent`);
     await page.locator('#agent-form [name="instructions"]').fill('Write a concise draft.');
