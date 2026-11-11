@@ -7,7 +7,7 @@
   "scripts": {
     "start": "electron .",
     "server": "node server.cjs",
-    "test": "node --test tests/integration.test.cjs",
+    "test": "node --test tests/integration.test.cjs tests/provider-error.test.cjs",
     "test:e2e": "node --test tests/electron.e2e.cjs"
   },
   "devDependencies": {

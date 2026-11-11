@@ -118,6 +118,7 @@ test('two independent Electron profiles complete shared UI workflow', { timeout:
     await page.locator('#run-form [name="documentId"]').selectOption({label:'Desktop document'});
     await page.locator('#run-form button').click();
     await page.locator('.run-item').filter({hasText:`${owner} draft`}).getByText('completed',{exact:true}).waitFor();
+    await page.locator('#connection-result').getByText('Your latest run completed. Its output is available below.').waitFor();
   };
   await run(a,'Alice');
   await run(b,'Bob');
